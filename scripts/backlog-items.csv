@@ -1,0 +1,64 @@
+type,id,parent,title,assignee,sp,sprint,priority,criteria
+user_story,US-1,,Amélioration du style CSS,Dimitry,5,Sprint 1,Haute,
+user_story,US-2,,Meilleure gestion des messages d'erreur,Dimitry,5,Sprint 1,Haute,
+user_story,US-3,,Améliorer l'accessibilité (A11Y),Dimitry + Jorge,8,Sprint 2,Haute,
+user_story,US-4,,Créer un nouveau thème,Jorge + Dimitry,5,Reporté,Basse,
+user_story,US-5,,Encapsuler l'application,Rachida,5,Sprint 1,Haute,
+user_story,US-6,,Implémentation d'une architecture en micro-services,Expert + Rachida,13,Sprint 4+,Moyenne,
+user_story,US-7,,Créer une pipeline d'intégration continue,Rachida,8,Sprint 2,Haute,
+user_story,US-8,,Mise en place d'un environnement de test,Rachida,8,Sprint 3,Moyenne,
+user_story,US-9,,Améliorer le calcul du risque d'inondation,Rachida + Dimitry,8,Sprint 4+,Luxueuse,
+user_story,US-10,,Problème de compatibilité avec les navigateurs,Dimitry + Jorge,5,Sprint 3,Moyenne,
+user_story,US-11,,Améliorer l'exportation des données,Rachida + Dimitry,5,Sprint 4+,Luxueuse,
+user_story,FORM,,Plan de formation tests (bloquant Daily Scrum),Expert,0,Sprint 1,Haute,
+formation,FORM-T0,FORM,Aperçu pyramide de tests et outillage,Dimitry + Rachida,0,Sprint 1,,Module certifié : compte-rendu atelier
+formation,T-EX1,FORM,Stratégie tests équipe (DoD qui écrit quoi),Expert,0,Sprint 1,,Document stratégie partagé
+formation,T-DI1,FORM,Tests unitaires Angular Jasmine/Vitest,Dimitry,0,Sprint 2,,3 tests passants sur US2-T2
+formation,T-DI2,FORM,Tests E2E Cypress parcours critiques,Dimitry,0,Sprint 3,,1 scénario Cypress vert
+formation,T-RA1,FORM,Tests unitaires Spring JUnit 5 + Mockito,Rachida,0,Sprint 2,,3 tests JUnit mapping erreurs
+formation,T-RA2,FORM,Tests intégration Testcontainers,Rachida,0,Sprint 2,,Tests intégration en CI locale
+formation,T-ALL1,FORM,Atelier TDD Red-Green-Refactor,Dimitry + Rachida,0,Sprint 2,,1 feature en TDD validée en pair
+formation,T-JO1,FORM,Scénarios E2E métier avec Jorge,Jorge + Dimitry,0,Sprint 2,,Scénarios documentés pour Cypress
+task,US1-T1,US-1,Auditer les feuilles de style et recenser les anomalies (fontes contrastes débordements) sur les pages principales,Dimitry,1,Sprint 1,,Liste d'anomalies documentée avec captures et pages concernées
+task,US1-T2,US-1,Corriger le chargement et la visibilité des polices (fallback @font-face variables CSS),Dimitry,2,Sprint 1,,Toutes les polices s'affichent correctement sur Chrome et Firefox
+task,US1-T3,US-1,Harmoniser la typographie et les espacements via variables/thème CSS existant,Dimitry,1,Sprint 2,,Styles cohérents sur les 3 pages principales sans régression visuelle
+task,US1-T4,US-1,Revue visuelle des corrections avec Jorge,Jorge,0,Sprint 1,,Validation UX formalisée (commentaires Figma ou checklist)
+task,US2-T1,US-2,Cartographier les flux d'erreur front (HTTP validation runtime) et back (exceptions Spring),Expert,1,Sprint 2,,Schéma des flux d'erreur partagé avec l'équipe
+task,US2-T2,US-2,Créer/standardiser un composant Angular de notification d'erreur réutilisable,Dimitry,2,Sprint 1,,Composant intégré sur au moins 2 pages ; tests unitaires reportés S2 (TEST-T1)
+task,US2-T3,US-2,Mapper les codes HTTP et exceptions métier vers des messages utilisateur clairs,Dimitry + Rachida,2,Sprint 1,,Messages compréhensibles pour les 5 cas d'erreur les plus fréquents
+task,US3-T1,US-3,Audit accessibilité des parcours critiques (formulaire recherche résultats navigation),Jorge,2,Sprint 2,,Rapport d'audit avec points bloquants et recommandations
+task,US3-T2,US-3,Corriger la navigation clavier et le focus visible sur les composants interactifs,Dimitry,2,Sprint 2,,Parcours complet réalisable au clavier sans piège de focus
+task,US3-T3,US-3,Ajouter attributs ARIA labels et textes alternatifs manquants,Dimitry,2,Sprint 3,,Formulaires et boutons conformes aux bonnes pratiques ARIA
+task,US3-T4,US-3,Corriger les ratios de contraste couleur signalés par l'audit,Dimitry,2,Sprint 3,,Contrastes conformes WCAG AA sur les éléments audités
+task,US4-T1,US-4,Atelier UX : recueil des besoins thème alternatif,Jorge,1,Reporté,,Synthèse des besoins validée par le Product Owner
+task,US4-T2,US-4,Maquettes Figma du nouveau thème,Jorge,2,Reporté,,Maquettes desktop + mobile des pages principales
+task,US4-T3,US-4,Implémentation du thème via variables CSS / Angular theming,Dimitry,2,Reporté,,Thème activable sans régression sur le dark theme existant
+task,US5-T1,US-5,Rédiger le Dockerfile front-end (build Angular + nginx ou node),Rachida,2,Sprint 1,,Image front buildée et démarrée en local
+task,US5-T2,US-5,Rédiger le Dockerfile back-end (Spring Boot),Rachida,2,Sprint 1,,Image back buildée API accessible en local
+task,US5-T3,US-5,Créer docker-compose.yml et documenter le lancement local,Rachida,1,Sprint 1,,docker compose up démarre l'application complète README à jour
+task,US6-T1,US-6,Analyser le monolithe et identifier les bounded contexts (images risques auth API),Expert,2,Sprint 4+,,Document d'analyse avec domaines identifiés
+task,US6-T2,US-6,Rédiger le document d'architecture cible (diagramme services + APIs),Expert,3,Sprint 4+,,Diagramme validé par l'équipe contrats d'API définis
+task,US6-T3,US-6,Extraire le premier service (ex. service de calcul des risques),Rachida,5,Sprint 4+,,Service déployable indépendamment tests passants
+task,US6-T4,US-6,Mettre en place la communication inter-services (REST ou messaging),Rachida,3,Sprint 4+,,Appels inter-services fonctionnels avec gestion d'erreurs
+task,US7-T1,US-7,Configurer workflow GitHub Actions : build front + back,Rachida,3,Sprint 2,,Pipeline verte sur push et pull request
+task,US7-T2,US-7,Intégrer lint et tests unitaires dans la pipeline,Rachida,3,Sprint 3,,Échec de build si lint ou tests en erreur
+task,US7-T3,US-7,Publier l'image Docker en artefact / registry à chaque merge,Rachida,2,Sprint 3,,Image disponible après merge sur branche principale
+task,US8-T1,US-8,Provisionner l'environnement de test (Docker/AWS séparé de prod),Rachida,3,Sprint 3,,Env de test accessible isolé de la production
+task,US8-T2,US-8,Externaliser la configuration (profils Spring test variables d'env),Rachida,2,Sprint 3,,Config prod/test séparée aucun secret en dur
+task,US8-T3,US-8,Ajouter un job de déploiement automatique vers l'env de test,Rachida,2,Sprint 3,,Déploiement auto déclenché après merge validé
+task,US8-T4,US-8,Rédiger les tests de smoke post-déploiement,Expert,1,Sprint 3,,Checklist smoke exécutée avec succès après chaque déploiement
+task,US9-T1,US-9,Profiler les performances de l'algorithme de calcul actuel,Rachida,2,Sprint 4+,,Rapport de profiling avec goulots identifiés
+task,US9-T2,US-9,Optimiser la requête/traitement back-end (cache index DB),Rachida,3,Sprint 4+,,Temps de réponse réduit d'au moins 30 % sur jeu de test
+task,US9-T3,US-9,Améliorer l'affichage des zones côtières inondables côté front,Dimitry,2,Sprint 4+,,Zones affichées correctement sur la carte UX fluide
+task,US9-T4,US-9,Valider la précision des résultats sur un jeu de données de référence,Expert,1,Sprint 4+,,Résultats conformes aux attentes métier sur 10 cas de test
+task,US10-T1,US-10,Établir la matrice de compatibilité cible (Chrome Firefox Safari Edge),Jorge,1,Sprint 3,,Matrice documentée avec versions minimales supportées
+task,US10-T2,US-10,Corriger les incompatibilités CSS/JS identifiées (polyfills si besoin),Dimitry,3,Sprint 3,,Rendu identique sur les 4 navigateurs cibles
+task,US10-T3,US-10,Campagne de tests manuels cross-browser et rapport,Dimitry,1,Sprint 3,,Rapport de tests sans bloquant sur navigateurs cibles
+task,US11-T1,US-11,Spécifier le format d'export (CSV/PDF/GeoJSON) avec les parties prenantes,Jorge + Expert,1,Sprint 4+,,Spécification validée (format champs limites)
+task,US11-T2,US-11,Implémenter l'endpoint d'export back-end Spring Boot,Rachida,3,Sprint 4+,,API retourne un fichier valide pour un jeu de données test
+task,US11-T3,US-11,Ajouter l'action d'export dans l'interface Angular,Dimitry,1,Sprint 4+,,Bouton d'export fonctionnel téléchargement du fichier
+task,PROC-T1,,Conventions Git et stratégie de branches,Expert,0,Sprint 1,,Conventions documentées et appliquées par l'équipe
+task,PROC-T2,,Checklist tests manuels parcours critiques,Jorge + Dimitry,0,Sprint 1,,Procédure exécutée fin S1
+task,TEST-T1,US-2,Tests unitaires composant erreur Jasmine/Vitest,Dimitry,1,Sprint 2,,3 tests passants liés US2-T2
+task,TEST-T2,US-2,Tests unitaires back JUnit Mockito mapping erreurs,Rachida + Dimitry,2,Sprint 2,,3 tests JUnit passants
+task,TEST-T3,US-2,Tests E2E Cypress 3 parcours critiques,Dimitry + Jorge,2,Sprint 3,,3 scénarios verts

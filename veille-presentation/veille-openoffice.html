@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Veille technologique — CATASTERRE</title>
+  <style>
+    @page { margin: 2cm; }
+    body {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #1a1a1a;
+      max-width: 21cm;
+      margin: 0 auto;
+      padding: 1.5cm;
+    }
+    h1 { font-size: 22pt; color: #1D76DB; border-bottom: 2px solid #1D76DB; padding-bottom: 0.3em; }
+    h2 { font-size: 14pt; color: #1D76DB; margin-top: 1.5em; page-break-after: avoid; }
+    h3 { font-size: 12pt; color: #333; }
+    .meta { color: #666; font-size: 10pt; margin-bottom: 2em; }
+    .notice {
+      background: #f0f6ff;
+      border: 1px solid #1D76DB;
+      padding: 0.8em 1em;
+      margin-bottom: 2em;
+      font-size: 10pt;
+    }
+    figure { text-align: center; margin: 1em 0 1.5em; page-break-inside: avoid; }
+    figure img { max-width: 100%; height: auto; }
+    figcaption { font-size: 9pt; color: #666; font-style: italic; margin-top: 0.4em; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 10pt; }
+    th { background: #1D76DB; color: #fff; padding: 6px 8px; text-align: left; }
+    td { border: 1px solid #ccc; padding: 5px 8px; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8f9fa; }
+    ul { margin: 0.5em 0; }
+    .slide { page-break-before: always; }
+    .slide:first-of-type { page-break-before: auto; }
+  </style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Veille technologique — CATASTERRE</h1>
+  <p class="meta">Projet 10 OpenClassrooms · juin 2026 · Résumé de veille.md</p>
+  <div class="notice">
+    <strong>Export OpenOffice :</strong> Fichier → Ouvrir ce HTML dans LibreOffice Writer ou Impress,
+    puis Enregistrer sous <em>.odt</em> ou <em>.odp</em>. Les diagrammes SVG sont dans le dossier <code>svg/</code>.
+  </div>
+  <h2>Objectif</h2>
+  <p>Constats sectoriels 2025-2026 pour la <strong>prise de décision</strong> — quatre axes croisés avec le backlog (11 US, 75 SP).</p>
+  <ul>
+    <li>Architectures applicatives</li>
+    <li>Performances</li>
+    <li>Gestion de la dette technique</li>
+    <li>Bonnes pratiques Full-Stack</li>
+  </ul>
+  <figure>
+    <img src="svg/01-contexte.svg" alt="Contexte CATASTERRE"/>
+    <figcaption>Fig. 1 — Contexte projet, stack et contraintes brownfield</figcaption>
+  </figure>
+</div>
+
+<div class="slide">
+  <h2>1. Quatre axes de veille</h2>
+  <figure>
+    <img src="svg/02-quatre-axes.svg" alt="Quatre axes"/>
+    <figcaption>Fig. 2 — Mindmap des 4 axes de veille</figcaption>
+  </figure>
+</div>
+
+<div class="slide">
+  <h2>2. Architectures applicatives</h2>
+  <h3>Roadmap Docker → microservices</h3>
+  <figure>
+    <img src="svg/03-architecture-roadmap.svg" alt="Roadmap architecture"/>
+    <figcaption>Fig. 3 — Étapes A et B alignées projet.md</figcaption>
+  </figure>
+  <h3>Pattern Strangler Fig</h3>
+  <figure>
+    <img src="svg/04-strangler-fig.svg" alt="Strangler Fig"/>
+    <figcaption>Fig. 4 — Migration incrémentale shadow → canary → cutover</figcaption>
+  </figure>
+  <h3>Bounded contexts probables</h3>
+  <figure>
+    <img src="svg/05-bounded-contexts.svg" alt="Bounded contexts"/>
+    <figcaption>Fig. 5 — Contextes à valider en atelier (US-6, US-9, US-11)</figcaption>
+  </figure>
+  <table>
+    <tr><th>Thème</th><th>Constat clé</th><th>Question décision</th></tr>
+    <tr><td>Monolithe modulaire</td><td>Bounded contexts avant extraction réseau</td><td>Modules images/risques/auth/export ?</td></tr>
+    <tr><td>Géo cloud-native</td><td>COG, PMTiles, STAC</td><td>GeoJSON vs tuiles aujourd'hui ?</td></tr>
+    <tr><td>OpenAPI</td><td>Contract-first front/back</td><td>Introduire dès Sprint 2 ?</td></tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h2>3. Performances</h2>
+  <figure>
+    <img src="svg/06-performance.svg" alt="Performance"/>
+    <figcaption>Fig. 6 — Front Angular, back Spring, spécificités géospatiales</figcaption>
+  </figure>
+  <table>
+    <tr><th>Métrique</th><th>Seuil indicatif</th><th>Outil</th></tr>
+    <tr><td>LCP</td><td>≤ 2,5 s</td><td>Lighthouse</td></tr>
+    <tr><td>CLS</td><td>≤ 0,1</td><td>Lighthouse</td></tr>
+    <tr><td>INP</td><td>≤ 200 ms</td><td>Lighthouse</td></tr>
+    <tr><td>API p95</td><td>À définir après profiling</td><td>Actuator / Micrometer</td></tr>
+  </table>
+  <p><em>Principe : mesurer avant d'optimiser (US9-T1).</em></p>
+</div>
+
+<div class="slide">
+  <h2>4. Dette technique</h2>
+  <figure>
+    <img src="svg/07-dette-technique.svg" alt="Dette technique"/>
+    <figcaption>Fig. 7 — Cartographie dette × priorités sprint</figcaption>
+  </figure>
+  <table>
+    <tr><th>Type</th><th>User Stories</th><th>Sprint</th></tr>
+    <tr><td>UX</td><td>US-1, US-2, US-3</td><td>S1-S2</td></tr>
+    <tr><td>Deploy</td><td>US-5</td><td>S1</td></tr>
+    <tr><td>Process</td><td>US-7, US-8</td><td>S2-S3</td></tr>
+    <tr><td>Structurelle</td><td>US-6</td><td>S4+</td></tr>
+    <tr><td>Métier / Luxueuse</td><td>US-9, US-11, US-4</td><td>S4+ / reporté</td></tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h2>5. Bonnes pratiques Full-Stack</h2>
+  <figure>
+    <img src="svg/08-fullstack-devops.svg" alt="DevOps"/>
+    <figcaption>Fig. 8 — Chaîne de livraison CI/CD et formation tests S2</figcaption>
+  </figure>
+  <ul>
+    <li>Docker multi-stage · docker-compose (US-5)</li>
+    <li>GitHub Actions · Trivy · Semgrep (US-7)</li>
+    <li>Environnements dev → staging → prod (US-8)</li>
+    <li>WCAG AA · composant erreur unifié (US-2, US-3)</li>
+    <li>Tests Vitest/JUnit/Testcontainers (formation tests S2)</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>6. Veille × Sprints</h2>
+  <figure>
+    <img src="svg/09-sprints.svg" alt="Planning sprints"/>
+    <figcaption>Fig. 9 — US prioritaires et axes de veille par sprint</figcaption>
+  </figure>
+  <table>
+    <tr><th>Sprint</th><th>SP</th><th>US</th><th>Axes dominants</th></tr>
+    <tr><td>S1</td><td>12</td><td>US-1, US-2, US-5</td><td>Perf front · Docker · Dette UX</td></tr>
+    <tr><td>S2</td><td>12-14</td><td>US-3, US-7, TEST-T1/T2</td><td>A11Y · CI/CD · Formation tests</td></tr>
+    <tr><td>S3</td><td>~16</td><td>US-8, US-10, TEST-T3</td><td>Env test · Navigateurs</td></tr>
+    <tr><td>S4+</td><td>—</td><td>US-6, US-9, US-11</td><td>Architecture · Perf géo</td></tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h2>7. Matrice décisionnelle — User Stories</h2>
+  <figure>
+    <img src="svg/10-matrice-us.svg" alt="Matrice US"/>
+    <figcaption>Fig. 10 — Croisement US × axes de veille</figcaption>
+  </figure>
+  <table>
+    <tr><th>US</th><th>Titre</th><th>Architecture</th><th>Performance</th><th>Dette</th><th>Full-Stack</th></tr>
+    <tr><td>US-1</td><td>Style CSS</td><td>—</td><td>OnPush, NgOptimizedImage</td><td>UX</td><td>Lint, revue Jorge</td></tr>
+    <tr><td>US-2</td><td>Erreurs</td><td>Contrat API</td><td>—</td><td>UX</td><td>Composant unifié</td></tr>
+    <tr><td>US-3</td><td>A11Y</td><td>—</td><td>—</td><td>UX</td><td>WCAG AA</td></tr>
+    <tr><td>US-5</td><td>Docker</td><td>Conteneurisation</td><td>—</td><td>Deploy</td><td>Multi-stage</td></tr>
+    <tr><td>US-6</td><td>Microservices</td><td>Strangler, ACL</td><td>—</td><td>Structurelle</td><td>OpenAPI</td></tr>
+    <tr><td>US-7</td><td>CI/CD</td><td>—</td><td>Anti-régression</td><td>Process</td><td>GH Actions, scans</td></tr>
+    <tr><td>US-8</td><td>Env. test</td><td>—</td><td>—</td><td>Parallel run</td><td>Smoke tests</td></tr>
+    <tr><td>US-9</td><td>Risque inondation</td><td>RiskCalculation</td><td>JPA, tuiles</td><td>—</td><td>Profiling</td></tr>
+    <tr><td>US-10</td><td>Navigateurs</td><td>—</td><td>@defer</td><td>—</td><td>Matrice nav.</td></tr>
+    <tr><td>US-11</td><td>Export</td><td>Export</td><td>Batch JDBC</td><td>Luxueuse</td><td>API + UI</td></tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h2>8. Questions comité projet</h2>
+  <ol>
+    <li>L'audit technique (code + perf + format données géo) est-il planifié avant le Sprint 3 ?</li>
+    <li>Le monolithe modulaire est-il un prérequis explicite avant l'US-6 ?</li>
+    <li>Quels indicateurs de dette seront suivis à chaque rétrospective ?</li>
+  </ol>
+  <p class="meta">Source : veille.md · Documents liés : formation.md · risque.md · backlog.md</p>
+</div>
+
+</body>
+</html>

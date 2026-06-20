@@ -1,0 +1,8 @@
+flowchart TB
+    L[Legacy monolithe] --> F[Facade API Gateway]
+    F --> S1[Phase Shadow 0 pct trafic]
+    S1 --> S2[Phase Canary 5 a 50 pct]
+    S2 --> S3[Phase Cutover 100 pct]
+    S3 --> NS[Nouveau service extrait]
+    ACL[Anti-Corruption Layer] -.-> F
+    ACL -.-> NS

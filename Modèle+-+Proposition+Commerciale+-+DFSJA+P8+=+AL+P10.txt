@@ -1,0 +1,169 @@
+
+Projet évolution d'application
+Proposition commerciale
+1. Contexte	2
+1.1 Contexte global	2
+1.2 Fonctionnalités métier	2
+2. Réalisation du projet	2
+2.1 Définition des tâches techniques	2
+2.2 Gestion des points de complexité	3
+2.3 Coûts	4
+2.4 Risques identifiés	5
+2.5 Définition des objectifs de performance	5
+3. Synthèse	5
+
+
+
+1. Contexte
+
+Décrire ici le contexte global et le contexte lié au besoin métier.
+
+1.1 Contexte global 
+
+
+1.2 Fonctionnalités métier
+
+
+2. Réalisation du projet
+
+Le projet CATASTERRE vise l'évolution d'une application web existante (visualisation de catastrophes naturelles via imagerie satellite) en mode Scrum, avec des sprints de 2 semaines et une équipe de 4 personnes à 40 h/semaine.
+
+2.1 Définition des tâches techniques
+
+Les travaux sont organisés en 4 epics, alignées sur le cahier des charges :
+
+Epic A - Stabilisation UX / front-end (Dimitry, Jorge)
+  - Correction des erreurs de styles (fontes, messages d'erreur)
+  - Amélioration du parcours utilisateur et de l'accessibilité
+  - Audit UX des pages critiques
+
+Epic B - Performance et back-end (Rachida)
+  - Optimisation Spring Boot (performance, sécurité Spring Data / Security)
+  - Correction de bugs critiques back-end
+
+Epic C - DevOps et disponibilité (Rachida)
+  - Containerisation Docker (Dockerfile, docker-compose)
+  - Pipeline CI/CD (GitHub Actions)
+  - Environnement de tests séparé de la production
+
+Epic D - Pilotage agile et qualité (Expert)
+  - Mise en place des pratiques Scrum
+  - Revue technique, coordination inter-équipes
+  - Suivi vélocité et amélioration continue
+
+Phase ultérieure (hors périmètre Sprint 1-3) : découpage en microservices.
+
+
+2.2 Gestion des points de complexité
+
+Méthode retenue : Story Points Fibonacci (1, 2, 3, 5, 8, 13), estimés en Planning Poker.
+
+Échelle de calibration :
+  1 SP  = tâche triviale        (2-4 h, 1 dev)
+  2 SP  = tâche simple          (4-8 h, 1 dev)
+  3 SP  = tâche moyenne         (1-1,5 j, 1 dev)
+  5 SP  = tâche complexe        (2-3 j, 1 dev)
+  8 SP  = tâche très complexe   (3-5 j, 1 dev)
+  13 SP = epic                  (à découper avant engagement sprint)
+
+Vélocité de l'équipe :
+  - Sprint 1 (engagement)     : 14 SP  (7 SP/semaine) - chiffre conservateur, calibrage legacy
+  - Sprint 2 (ajusté)           : vélocité S1 + 2 à 4 SP selon livraison réelle
+  - Sprints 3+ (stabilisé)    : ~20 SP/sprint (~10 SP/semaine), plafond 20 SP
+
+Règle d'ajustement Sprint 2 :
+  - S1 livré ≤ 10 SP → S2 = S1 + 2 SP (max 14 SP)
+  - S1 livré 11-14 SP → S2 = S1 + 3 SP
+  - S1 livré ≥ 15 SP → S2 = S1 + 4 SP (max 20 SP)
+
+Détail des calculs de capacité :
+  - 2 développeurs actifs (Dimitry, Rachida) : ~72 h dev livrables/semaine
+  - Facteur brownfield (legacy, dette technique) : -30 %
+  - Capacité productive : ~100 h/sprint sur 2 semaines
+  - Conversion 1 SP ? 2 h dev effectif ? ~20 SP théoriques, ajustés à ~20 SP réalistes
+
+NB : Jorge (UX) ne contribue pas directement aux SP « Done » en développement ; son travail alimente les stories des sprints suivants.
+
+
+Tâche technique                                          | Complexité (SP) | Estimation temps | Marge
+---------------------------------------------------------|-----------------|------------------|------
+Corriger erreurs de styles (fontes, messages d'erreur)   | 3               | 1,5 j (Dimitry)  | +0,5 j
+Audit et correction de 2 bugs critiques                  | 5               | 2,5 j (D+Expert) | +1 j
+Dockerfile + docker-compose (encapsulation app)          | 5               | 2,5 j (Rachida)  | +1 j
+Conventions Git et branches (fondation process)          | 1               | 0,5 j (Expert)   | +0,25 j
+Audit UX des pages critiques (wireframes Figma)          | 3               | 1,5 j (Jorge)    | +0,5 j
+Amélioration accessibilité formulaire de recherche       | 5               | 2,5 j (Dimitry)  | +1 j
+Pipeline CI/CD (build + lint, GitHub Actions)            | 8               | 4 j (Rachida)    | +1 j
+Optimisation performance back-end Spring Boot            | 5               | 2,5 j (Rachida)  | +1 j
+Environnement de tests séparé de la production           | 8               | 4 j (Rachida)    | +1 j
+---------------------------------------------------------|-----------------|------------------|------
+Total Sprint 1 engagé                                    | 14 SP           |                  |
+Backlog Sprint 1 (buffer non engagé)                     | 2 SP            |                  |
+
+
+2.3 Coûts
+
+Méthode de calcul :
+  Coût = TJM × nombre de jours facturés
+  Jours facturés retenus : 18 j/mois (convention ESN : congés, fériés, cérémonies Scrum)
+  Hypothèse géographique : hors Paris / national (+10 à 20 % en Île-de-France)
+
+Sources TJM (baromètres marché France 2025-2026) :
+  - Silkhom, Elynix Jobs, Freelance Solution, Portage360, Free-Work
+
+TJM retenus par profil (recherche marché) :
+
+Membre  | Profil                          | Exp.  | Fourchette marché | TJM retenu | Coût/mois (18 j)
+--------|---------------------------------|-------|-------------------|-----------|------------------
+Expert  | Lead agile / pilotage qualité   | -     | 600 - 750 /j     | 680 /j   | 12 240  HT
+Dimitry | Dev front-end Angular / RxJS    | 3 ans | 430 - 550 /j     | 480 /j   |  8 640  HT
+Rachida | DevOps (k8s, AWS, CI) + Spring  | 5 ans | 550 - 720 /j     | 620 /j   | 11 160  HT
+Jorge   | UX Designer senior (Figma)      | 12 ans| 520 - 700 /j     | 580 /j   | 10 440  HT
+--------|---------------------------------|-------|-------------------|-----------|------------------
+TOTAL équipe (4 × 40 h/semaine)         |       |                   |           | 42 480  HT/mois
+
+Coût Sprint 1 (2 semaines, allocation partielle) :
+
+Tâche / période                          | Temps   | Membre de l'équipe | TJM     | Total
+-----------------------------------------|---------|--------------------|---------|----------
+Pilotage agile, revue, conventions Git   | 8 j     | Expert             | 680    |  5 440 
+Corrections styles + bugs front-end      | 9 j     | Dimitry            | 480    |  4 320 
+Docker + fondations DevOps               | 9 j     | Rachida            | 620    |  5 580 
+Audit UX + wireframes pages critiques    | 6 j     | Jorge              | 580    |  3 480 
+-----------------------------------------|---------|--------------------|---------|----------
+TOTAL Sprint 1                           | 32 j    |                    |         | 18 820  HT
+
+Estimation budget projet (4 sprints, vélocité moyenne ~17 SP/sprint) :
+
+Poste                                    | Durée        | Coût estimé
+-----------------------------------------|--------------|-------------
+Sprint 1 (14 SP, calibrage)              | 2 semaines   | 18 820  HT
+Sprint 2 (ajusté ~17 SP)                 | 2 semaines   | 19 500  HT
+Sprint 3 (~20 SP, stabilisé)             | 2 semaines   | 20 200  HT
+Sprint 4 (~20 SP)                        | 2 semaines   | 20 200  HT
+-----------------------------------------|--------------|-------------
+TOTAL estimé (8 semaines)                | 4 sprints    | 78 720  HT
+
+Formule de projection :
+  Durée (semaines) = SP restants ÷ 10 SP/semaine
+  Coût mensuel équipe complète = 42 480  HT (18 j/mois × 4 profils)
+
+
+2.4 Risques identifiés
+Ajouter ici une matrice des risques.
+
+
+
+2.5 Définition des objectifs de performance
+Ajouter ici des objectifs de performance pour montrer la faisabilité quantifiable de la solution. Il est également possible d'ajouter cette section dans la troisième partie.
+
+3. Synthèse 
+
+Rédiger ici un résumé du document avec la proposition chiffrée, détaillée et comparée avec le budget initial. Dans l'idéal, proposer une deuxième proposition dépassant le budget, avec des améliorations en plus.
+
+Proposition chiffrée (base) :
+  - Équipe : 4 profils × 40 h/semaine
+  - Vélocité : 14 SP (S1) → ~20 SP/sprint (S3+)
+  - Coût mensuel équipe : 42 480  HT
+  - Coût Sprint 1 : 18 820  HT
+  - Coût estimé 4 sprints (8 semaines) : 78 720  HT

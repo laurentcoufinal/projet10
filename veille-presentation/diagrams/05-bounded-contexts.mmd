@@ -1,0 +1,14 @@
+flowchart TB
+    subgraph contexts [Bounded contexts a valider]
+        IC[ImageIngestion]
+        RC[RiskCalculation US-9]
+        UA[UserAccess auth]
+        EX[Export US-11]
+        PR[Presentation US-1 US-2 US-3 US-10]
+    end
+    MONO[Monolithe Spring Boot] --> IC
+    MONO --> RC
+    MONO --> UA
+    MONO --> EX
+    MONO --> PR
+    ANG[Angular] --> PR

@@ -1,0 +1,17 @@
+flowchart LR
+    subgraph haute [Dette haute S1-S2]
+        D1[UX US-1 US-2 US-3]
+        D2[Deploy US-5]
+        D3[Process US-7 US-8]
+    end
+    subgraph moyenne [Dette moyenne S4+]
+        D4[Structure US-6]
+    end
+    subgraph luxueuse [Dette luxueuse S4+]
+        D5[Metier US-9 US-11]
+        D6[Reportee US-4 theme]
+    end
+    PRIN[Pas de big bang] --> haute
+    PRIN --> moyenne
+    AUDIT[Audit structural -30 pct] --> D4
+    ENV[Parallel run US-8] --> D3

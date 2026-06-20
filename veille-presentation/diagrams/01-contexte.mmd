@@ -1,0 +1,25 @@
+flowchart TB
+    subgraph app [CATASTERRE]
+        A[Visualisation catastrophes naturelles]
+        B[Imagerie satellite]
+        C[Notaires et immobilier]
+    end
+    subgraph stack [Stack]
+        D[Angular front]
+        E[Spring Boot back]
+        F[MySQL]
+    end
+    subgraph equipe [Equipe]
+        G[Dimitry front]
+        H[Rachida DevOps back]
+        I[Jorge UX]
+        J[Expert agile]
+    end
+    subgraph contraintes [Contraintes brownfield]
+        K[Lenteurs client]
+        L[Erreurs frequentes]
+        M[Roadmap Docker puis microservices]
+    end
+    app --> stack
+    equipe --> app
+    contraintes --> app

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+
+<Styles>
+  <Style ss:ID="Default"><Alignment ss:Vertical="Top" ss:WrapText="1"/></Style>
+  <Style ss:ID="Title"><Font ss:Bold="1" ss:Size="16"/><Alignment ss:Horizontal="Left"/></Style>
+  <Style ss:ID="Subtitle"><Font ss:Italic="1" ss:Size="11" ss:Color="#666666"/></Style>
+  <Style ss:ID="Header"><Font ss:Bold="1" ss:Color="#FFFFFF"/>
+    <Interior ss:Color="#1D76DB" ss:Pattern="Solid"/>
+    <Alignment ss:WrapText="1"/></Style>
+</Styles>
+
+<Worksheet ss:Name="Presentation">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Veille technologique — CATASTERRE</Data></Cell></Row>
+<Row><Cell ss:StyleID="Subtitle"><Data ss:Type="String">Résumé présentation · juin 2026 · Projet 10 OpenClassrooms</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Section</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Contenu</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Objectif</Data></Cell><Cell><Data ss:Type="String">Constats sectoriels pour la prise de décision — pas de solution imposée</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Application</Data></Cell><Cell><Data ss:Type="String">Visualisation catastrophes naturelles · imagerie satellite · immobilier</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">4 axes</Data></Cell><Cell><Data ss:Type="String">Architecture · Performance · Dette technique · Bonnes pratiques Full-Stack</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Méthode</Data></Cell><Cell><Data ss:Type="String">Tendances 2025-2026 croisées avec backlog 11 US / 75 SP</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Équipe</Data></Cell><Cell><Data ss:Type="String">Dimitry (front) · Rachida (DevOps/back) · Jorge (UX) · Expert (agile)</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Stack</Data></Cell><Cell><Data ss:Type="String">Angular · Spring Boot/Security/Data · MySQL · Docker · GitHub Actions · k8s/AWS</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Contrainte</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Constat</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Maturité</Data></Cell><Cell><Data ss:Type="String">Brownfield &lt; 1 an — lenteurs, erreurs, instabilités</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Roadmap</Data></Cell><Cell><Data ss:Type="String">Étape A Docker → Étape B microservices</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Sprint 1</Data></Cell><Cell><Data ss:Type="String">Stabilisation UX + Docker (12 SP ajustés)</Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="1-Architecture">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Axe 1 — Architectures applicatives</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Thème</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Constat</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Lien CATASTERRE</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Question clé</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Monolithe modulaire</Data></Cell><Cell><Data ss:Type="String">Bounded contexts internes avant extraction réseau — consensus 2025-2026</Data></Cell><Cell><Data ss:Type="String">Étape A Docker · US-6 Sprint 4+</Data></Cell><Cell><Data ss:Type="String">Structurer modules images/risques/auth/export avant 1er service ?</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Strangler Fig</Data></Cell><Cell><Data ss:Type="String">Migration incrémentale shadow → canary → cutover</Data></Cell><Cell><Data ss:Type="String">Étape B · US-6 (13 SP)</Data></Cell><Cell><Data ss:Type="String">Premier contexte : RiskCalculation ou ImageIngestion ?</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Anti-Corruption Layer</Data></Cell><Cell><Data ss:Type="String">Traduit modèles legacy vers nouveaux services</Data></Cell><Cell><Data ss:Type="String">App peu documentée — risque fuite dette</Data></Cell><Cell><Data ss:Type="String">ACL à la frontière API ou couche service ?</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Géo cloud-native</Data></Cell><Cell><Data ss:Type="String">COG · PMTiles/MVT · STAC — scaling élastique CDN</Data></Cell><Cell><Data ss:Type="String">US-9 · objectif zones inondation côtières</Data></Cell><Cell><Data ss:Type="String">Format actuel GeoJSON vs tuiles ? Migration Sprint 4+ ?</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">OpenAPI contract-first</Data></Cell><Cell><Data ss:Type="String">Sync front Angular / back Spring · tests de contrat</Data></Cell><Cell><Data ss:Type="String">US-2 erreurs intégration</Data></Cell><Cell><Data ss:Type="String">OpenAPI dès Sprint 2 ou après S1 ?</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Bounded context</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Responsabilité</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">US</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">ImageIngestion</Data></Cell><Cell><Data ss:Type="String">Images satellite</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">RiskCalculation</Data></Cell><Cell><Data ss:Type="String">Calcul risques inondation</Data></Cell><Cell><Data ss:Type="String">US-9</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">UserAccess</Data></Cell><Cell><Data ss:Type="String">Auth</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Export</Data></Cell><Cell><Data ss:Type="String">Export CSV/PDF/GeoJSON</Data></Cell><Cell><Data ss:Type="String">US-11</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Presentation</Data></Cell><Cell><Data ss:Type="String">UX · carte · A11Y</Data></Cell><Cell><Data ss:Type="String">US-1, US-2, US-3, US-10</Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="2-Performance">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Axe 2 — Performances</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Couche</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Thème</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Constat</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Lien backlog</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Front Angular</Data></Cell><Cell><Data ss:Type="String">Zoneless + Signals</Data></Cell><Cell><Data ss:Type="String">Angular 20.2+ · moins de change detection</Data></Cell><Cell><Data ss:Type="String">US-1, US-10</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Front Angular</Data></Cell><Cell><Data ss:Type="String">OnPush + @defer</Data></Cell><Cell><Data ss:Type="String">Composants lourds (carte) à la demande</Data></Cell><Cell><Data ss:Type="String">Lenteurs client</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Front Angular</Data></Cell><Cell><Data ss:Type="String">NgOptimizedImage</Data></Cell><Cell><Data ss:Type="String">Lazy-load images satellite · réduit CLS</Data></Cell><Cell><Data ss:Type="String">Imagerie</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Back Spring</Data></Cell><Cell><Data ss:Type="String">N+1 / OSIV</Data></Cell><Cell><Data ss:Type="String">open-in-view=false · JOIN FETCH · DTO</Data></Cell><Cell><Data ss:Type="String">US-9</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Back Spring</Data></Cell><Cell><Data ss:Type="String">Cache Caffeine/Redis</Data></Cell><Cell><Data ss:Type="String">Données stables uniquement</Data></Cell><Cell><Data ss:Type="String">US9-T2</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Back Spring</Data></Cell><Cell><Data ss:Type="String">Virtual threads Java 21</Data></Cell><Cell><Data ss:Type="String">Débit I/O JDBC</Data></Cell><Cell><Data ss:Type="String">Post-Docker</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Back Spring</Data></Cell><Cell><Data ss:Type="String">Batch JDBC</Data></Cell><Cell><Data ss:Type="String">Écritures groupées export</Data></Cell><Cell><Data ss:Type="String">US-11</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Géospatial</Data></Cell><Cell><Data ss:Type="String">GeoJSON vs tuiles</Data></Cell><Cell><Data ss:Type="String">700k polygones = 350-500 Mo · tuiles ÷10-25</Data></Cell><Cell><Data ss:Type="String">Cause probable lenteurs</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Géospatial</Data></Cell><Cell><Data ss:Type="String">Index spatial MySQL</Data></Cell><Cell><Data ss:Type="String">Sans index = full scan</Data></Cell><Cell><Data ss:Type="String">US9-T2</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Géospatial</Data></Cell><Cell><Data ss:Type="String">CDN tuiles</Data></Cell><Cell><Data ss:Type="String">Latence &lt; 50 ms</Data></Cell><Cell><Data ss:Type="String">Post-Docker AWS</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Métrique</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Seuil indicatif</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Outil</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">LCP</Data></Cell><Cell><Data ss:Type="String">≤ 2,5 s</Data></Cell><Cell><Data ss:Type="String">Lighthouse</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">CLS</Data></Cell><Cell><Data ss:Type="String">≤ 0,1</Data></Cell><Cell><Data ss:Type="String">Lighthouse</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">INP</Data></Cell><Cell><Data ss:Type="String">≤ 200 ms</Data></Cell><Cell><Data ss:Type="String">Lighthouse</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">API p95</Data></Cell><Cell><Data ss:Type="String">À définir après profiling</Data></Cell><Cell><Data ss:Type="String">Actuator / Micrometer</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Principe</Data></Cell><Cell><Data ss:Type="String">Mesurer avant d'optimiser</Data></Cell><Cell><Data ss:Type="String">US9-T1 profiling</Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="3-Dette">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Axe 3 — Dette technique</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Principe</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Constat</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Application</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Pas de big-bang</Data></Cell><Cell><Data ss:Type="String">Réécriture = risque downtime/budget</Data></Cell><Cell><Data ss:Type="String">Approche incrémentale sprints 1-6</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Audit structural</Data></Cell><Cell><Data ss:Type="String">Analyse statique réduit périmètre ~30 %</Data></Cell><Cell><Data ss:Type="String">Avant US-6</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">TIME / MoSCoW</Data></Cell><Cell><Data ss:Type="String">Tolerate · Invest · Migrate · Eliminate</Data></Cell><Cell><Data ss:Type="String">US-4 Won't · US-9/11 Could</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Parallel run</Data></Cell><Cell><Data ss:Type="String">Legacy autoritaire jusqu'à validation env test</Data></Cell><Cell><Data ss:Type="String">US-8</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Dette dans backlog</Data></Cell><Cell><Data ss:Type="String">Stories dédiées pas seulement bugs</Data></Cell><Cell><Data ss:Type="String">US-1/2 UX · US-7 process</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Type dette</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">User Stories</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Priorité sprint</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">UX (styles, erreurs, A11Y)</Data></Cell><Cell><Data ss:Type="String">US-1, US-2, US-3</Data></Cell><Cell><Data ss:Type="String">Haute · S1-S2</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Process (CI/CD, env test)</Data></Cell><Cell><Data ss:Type="String">US-7, US-8</Data></Cell><Cell><Data ss:Type="String">Haute · S2-S3</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Deploy (containerisation)</Data></Cell><Cell><Data ss:Type="String">US-5</Data></Cell><Cell><Data ss:Type="String">Haute · S1</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Structurelle (monolithe)</Data></Cell><Cell><Data ss:Type="String">US-6</Data></Cell><Cell><Data ss:Type="String">Moyenne · S4+</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Métier (perf, export)</Data></Cell><Cell><Data ss:Type="String">US-9, US-11</Data></Cell><Cell><Data ss:Type="String">Luxueuse · S4+</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Reportée (thème)</Data></Cell><Cell><Data ss:Type="String">US-4</Data></Cell><Cell><Data ss:Type="String">Basse · reporté</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Indicateur suivi</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Objectif</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Ratio bugs / features</Data></Cell><Cell><Data ss:Type="String">Par sprint</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Couverture tests</Data></Cell><Cell><Data ss:Type="String">Progression via US-7-T2 + formation</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Temps build/deploy</Data></Cell><Cell><Data ss:Type="String">Réduction continue</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Requêtes SQL / endpoint</Data></Cell><Cell><Data ss:Type="String">Après audit Hibernate</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Vélocité vs engagement</Data></Cell><Cell><Data ss:Type="String">12 SP S1 · 14 SP cible S2</Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="4-Full-Stack">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Axe 4 — Bonnes pratiques Full-Stack</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Domaine</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Pratique</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Lien sprint / US</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">Docker multi-stage</Data></Cell><Cell><Data ss:Type="String">US-5</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">docker-compose local</Data></Cell><Cell><Data ss:Type="String">US5-T3</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">GitHub Actions lint + tests</Data></Cell><Cell><Data ss:Type="String">US-7</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">Trivy + Semgrep en CI</Data></Cell><Cell><Data ss:Type="String">US-7-T2</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">Flyway/Liquibase migrations</Data></Cell><Cell><Data ss:Type="String">À évaluer</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">Envs dev → staging → prod</Data></Cell><Cell><Data ss:Type="String">US-8</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">DevOps</Data></Cell><Cell><Data ss:Type="String">Smoke tests post-deploy</Data></Cell><Cell><Data ss:Type="String">US8-T4</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Qualité</Data></Cell><Cell><Data ss:Type="String">Composant erreur unifié + mapping HTTP</Data></Cell><Cell><Data ss:Type="String">US-2</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Qualité</Data></Cell><Cell><Data ss:Type="String">WCAG AA · clavier · ARIA</Data></Cell><Cell><Data ss:Type="String">US-3</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Qualité</Data></Cell><Cell><Data ss:Type="String">Vitest/Jasmine front · JUnit/Testcontainers back</Data></Cell><Cell><Data ss:Type="String">US-7-T2 · formation tests</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Qualité</Data></Cell><Cell><Data ss:Type="String">Revue UX Jorge formalisée</Data></Cell><Cell><Data ss:Type="String">US1-T4</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Agile</Data></Cell><Cell><Data ss:Type="String">DoD partagée · vélocité ajustée</Data></Cell><Cell><Data ss:Type="String">backlog.md · comite-projet.md</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Agile</Data></Cell><Cell><Data ss:Type="String">Veille en rétrospective</Data></Cell><Cell><Data ss:Type="String">1 tendance / sprint</Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="Matrice-US">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Synthèse — Matrice décisionnelle</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">US</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Titre</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Architecture</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Performance</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Dette</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Full-Stack</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-1</Data></Cell><Cell><Data ss:Type="String">Style CSS</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">OnPush, NgOptimizedImage</Data></Cell><Cell><Data ss:Type="String">Dette UX</Data></Cell><Cell><Data ss:Type="String">Lint, revue Jorge</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-2</Data></Cell><Cell><Data ss:Type="String">Messages erreur</Data></Cell><Cell><Data ss:Type="String">Contrat API</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Dette UX</Data></Cell><Cell><Data ss:Type="String">Composant + mapping HTTP</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-3</Data></Cell><Cell><Data ss:Type="String">Accessibilité</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Dette UX</Data></Cell><Cell><Data ss:Type="String">WCAG AA</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-4</Data></Cell><Cell><Data ss:Type="String">Nouveau thème</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Reportée</Data></Cell><Cell><Data ss:Type="String">Angular theming</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-5</Data></Cell><Cell><Data ss:Type="String">Docker</Data></Cell><Cell><Data ss:Type="String">Conteneurisation</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Dette deploy</Data></Cell><Cell><Data ss:Type="String">Multi-stage, compose</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-6</Data></Cell><Cell><Data ss:Type="String">Microservices</Data></Cell><Cell><Data ss:Type="String">Strangler, ACL</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Dette structurelle</Data></Cell><Cell><Data ss:Type="String">OpenAPI, contract tests</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-7</Data></Cell><Cell><Data ss:Type="String">CI/CD</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Anti-régression</Data></Cell><Cell><Data ss:Type="String">Dette process</Data></Cell><Cell><Data ss:Type="String">GH Actions, scans</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-8</Data></Cell><Cell><Data ss:Type="String">Env. test</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Parallel run</Data></Cell><Cell><Data ss:Type="String">Profils Spring, smoke</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-9</Data></Cell><Cell><Data ss:Type="String">Risque inondation</Data></Cell><Cell><Data ss:Type="String">RiskCalculation</Data></Cell><Cell><Data ss:Type="String">JPA, tuiles, index</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Profiling d'abord</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-10</Data></Cell><Cell><Data ss:Type="String">Compatibilité nav.</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">@defer, polyfills</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">Matrice navigateurs</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">US-11</Data></Cell><Cell><Data ss:Type="String">Export données</Data></Cell><Cell><Data ss:Type="String">Export</Data></Cell><Cell><Data ss:Type="String">Batch JDBC</Data></Cell><Cell><Data ss:Type="String">Luxueuse</Data></Cell><Cell><Data ss:Type="String">API Spring + UI</Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="Sprints">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Veille × Sprints</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Sprint</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">SP</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">US prioritaires</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Axes veille dominants</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Sprint 1</Data></Cell><Cell><Data ss:Type="String">12</Data></Cell><Cell><Data ss:Type="String">US-1, US-2, US-5</Data></Cell><Cell><Data ss:Type="String">Perf front · Docker · Dette UX · FORM-T0</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Sprint 2</Data></Cell><Cell><Data ss:Type="String">12-14</Data></Cell><Cell><Data ss:Type="String">US-3, US-7, TEST-T1/T2</Data></Cell><Cell><Data ss:Type="String">A11Y · CI/CD · Formation tests</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Sprint 3</Data></Cell><Cell><Data ss:Type="String">~16</Data></Cell><Cell><Data ss:Type="String">US-8, US-10, TEST-T3</Data></Cell><Cell><Data ss:Type="String">Env test · Navigateurs · Cypress</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Sprint 4+</Data></Cell><Cell><Data ss:Type="String">—</Data></Cell><Cell><Data ss:Type="String">US-6, US-9, US-11</Data></Cell><Cell><Data ss:Type="String">Strangler · Perf géo · Export</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Question comité</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String"></Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Audit code + perf + données géo avant S3 ?</Data></Cell><Cell><Data ss:Type="String"></Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Monolithe modulaire prérequis explicite US-6 ?</Data></Cell><Cell><Data ss:Type="String"></Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Indicateurs dette suivis en rétrospective ?</Data></Cell><Cell><Data ss:Type="String"></Data></Cell></Row>
+</Table>
+</Worksheet>
+<Worksheet ss:Name="Bibliographie">
+<Table>
+<Row><Cell ss:StyleID="Title"><Data ss:Type="String">Bibliographie (sélection)</Data></Cell></Row>
+<Row></Row>
+<Row><Cell ss:StyleID="Header"><Data ss:Type="String">Axe</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Source</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">URL</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Architecture</Data></Cell><Cell><Data ss:Type="String">Monolith to Microservices 2026</Data></Cell><Cell><Data ss:Type="String">knowledgelib.io</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Architecture</Data></Cell><Cell><Data ss:Type="String">Strangler Fig Pattern</Data></Cell><Cell><Data ss:Type="String">learn.microsoft.com</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Architecture</Data></Cell><Cell><Data ss:Type="String">Modern WebGIS Architecture</Data></Cell><Cell><Data ss:Type="String">offnadir-delta.com</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Performance</Data></Cell><Cell><Data ss:Type="String">Spring Boot JPA Performance 2026</Data></Cell><Cell><Data ss:Type="String">blog.devops-monk.com</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Performance</Data></Cell><Cell><Data ss:Type="String">700K polygons satellite maps</Data></Cell><Cell><Data ss:Type="String">agfianf.github.io</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Performance</Data></Cell><Cell><Data ss:Type="String">Angular v21 Zoneless</Data></Cell><Cell><Data ss:Type="String">zyraui.dev</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Dette</Data></Cell><Cell><Data ss:Type="String">Modernizing Legacy Software 2025</Data></Cell><Cell><Data ss:Type="String">javra.com</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Full-Stack</Data></Cell><Cell><Data ss:Type="String">Angular + Spring Boot Guide</Data></Cell><Cell><Data ss:Type="String">innovirtuoso.com</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Full-Stack</Data></Cell><Cell><Data ss:Type="String">DevSecOps Spring+Angular</Data></Cell><Cell><Data ss:Type="String">github.com/georgesfk/secspringterracloud</Data></Cell></Row>
+<Row></Row>
+<Row><Cell><Data ss:Type="String">Document source</Data></Cell><Cell><Data ss:Type="String">veille.md · projet10 · juin 2026</Data></Cell></Row>
+</Table>
+</Worksheet>
+</Workbook>

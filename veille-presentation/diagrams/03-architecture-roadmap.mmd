@@ -1,0 +1,17 @@
+flowchart LR
+    subgraph etapeA [Etape A Sprint 1-3]
+        A1[Docker US-5]
+        A2[CI build US-7-T1]
+        A3[Modules internes]
+    end
+    subgraph etapeB [Etape B Sprint 4+]
+        B1[Monolithe modulaire]
+        B2[Strangler Fig]
+        B3[Premier service RiskCalculation ou ImageIngestion]
+    end
+    subgraph cible [Cible long terme]
+        C1[API Gateway]
+        C2[PMTiles CDN]
+        C3[Microservices US-6]
+    end
+    etapeA --> etapeB --> cible

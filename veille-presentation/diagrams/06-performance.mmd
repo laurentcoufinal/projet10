@@ -1,0 +1,22 @@
+flowchart TB
+    subgraph front [Front Angular Dimitry]
+        F1[Zoneless Signals]
+        F2[OnPush et defer carte]
+        F3[NgOptimizedImage satellite]
+    end
+    subgraph back [Back Spring Rachida]
+        B1[N+1 OSIV false]
+        B2[Cache Caffeine Redis]
+        B3[Virtual threads Java 21]
+        B4[Batch JDBC export]
+    end
+    subgraph geo [Geo spatial]
+        G1[GeoJSON massif 700k polygones]
+        G2[Tuiles PMTiles MVT]
+        G3[Index spatial MySQL]
+        G4[CDN tuiles]
+    end
+    G1 -->|probleme| LENT[Lenteurs carte]
+    G2 -->|solution| RAPIDE[Charge divisee 10 a 25]
+    front --> LENT
+    back --> US9[US-9 profiling]

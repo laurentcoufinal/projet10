@@ -1,0 +1,10 @@
+flowchart TB
+    DEV[Developpement] --> CI[GitHub Actions US-7]
+    CI --> LINT[Lint front back]
+    CI --> TEST[Tests unitaires integration]
+    CI --> SCAN[Trivy Semgrep]
+    CI --> BUILD[Build Docker US-5]
+    BUILD --> STG[Env staging US-8]
+    STG --> SMOKE[Smoke tests US8-T4]
+    SMOKE --> PROD[Production]
+    FORM[Formation tests S2] -.-> TEST
